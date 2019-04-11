@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Panel headerText="Bestellpositionerfassung" class="sapUiResponsiveMargin">
+		<content>
+			<Label text="PID" labelFor="iPID"/>
+			<Input id="iPID" type="Text" class="sapUiSmallMarginBottom" value="{c>/PID}"/>
+			<Label text="Menge" labelFor="iMenge"/>
+			<Input id="iMenge" type="Integer" class="sapUiSmallMarginBottom" value="{c>/Menge}"/>
+			<Label text="AID" labelFor="iAID"/>
+			<Input id="iAID" type="Text" class="sapUiSmallMarginBottom" value="{c>/AID}"/>
+			<Button text="Anlegen" press="onCreatePosition"/>
+		</content>
+	</Panel>
+</core:FragmentDefinition>

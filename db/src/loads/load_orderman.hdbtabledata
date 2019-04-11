@@ -1,0 +1,72 @@
+{
+  "format_version": 1,
+  "imports": [{
+    "target_table": "KUNDE",
+    "source_data": {
+      "data_type": "CSV",
+      "file_name": "data_kunde.csv",
+      "has_header": true,
+      "dialect": "HANA",
+      "type_config": {
+        "delimiter": ","
+      }
+    },
+    "import_settings": {"include_filter" : [ ], "import_columns": ["KID", "NAME"]},
+    "column_mappings": {"KID": 1, "NAME": 2}
+  }, {
+    "target_table": "STATUS",
+    "source_data": {
+      "data_type": "CSV",
+      "file_name": "data_status.csv",
+      "has_header": true,
+      "dialect": "HANA",
+      "type_config": {
+        "delimiter": ","
+      }
+    },
+    "import_settings": {"include_filter" : [ ], "import_columns": ["SID", "STATUS"]},
+    "column_mappings": {"SID": 1, "STATUS": 2}
+  }, {
+    "target_table": "BESTELLUNG",
+    "source_data": {
+      "data_type": "CSV",
+      "file_name": "data_bestellung.csv",
+      "has_header": true,
+      "dialect": "HANA",
+      "type_config": {
+        "delimiter": ","
+      }
+    },
+    "import_settings": {"include_filter" : [ ], "import_columns": ["BID", "BESTELLDATUM", "KID_KID", "SID_SID"]},
+    "column_mappings": {"BID": 1, "BESTELLDATUM": 2, "KID_KID": 3, "SID_SID": 4}
+    },
+    {
+    "target_table": "ARTIKEL",
+    "source_data": {
+      "data_type": "CSV",
+      "file_name": "data_artikel.csv",
+      "has_header": true,
+      "dialect": "HANA",
+      "type_config": {
+        "delimiter": ","
+      }
+    },
+    "import_settings": {"include_filter" : [ ], "import_columns": ["AID", "BESCHREIBUNG"]},
+    "column_mappings": {"AID": 1, "BESCHREIBUNG": 2}
+  },
+    {
+    "target_table": "BESTELLPOSITION",
+    "source_data": {
+      "data_type": "CSV",
+      "file_name": "data_bestellposition.csv",
+      "has_header": true,
+      "dialect": "HANA",
+      "type_config": {
+        "delimiter": ","
+      }
+    },
+    "import_settings": {"include_filter" : [ ], "import_columns": ["PID", "MENGE", "AID_AID", "BID_BID"]},
+    "column_mappings": {"PID": 1, "MENGE": 2, "AID_AID": 3, "BID_BID": 4}
+    }
+  ]
+}
