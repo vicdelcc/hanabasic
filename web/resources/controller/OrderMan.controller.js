@@ -40,7 +40,19 @@ sap.ui.define(
 						MessageToast.show(error.responseText);
 					}
 				);
-				this.onUpdate();
+				this.onUpdate("tableCustomers");
+			},
+			
+			onUpdate: function(tableName) {
+				
+				var oBinding = this.byId(tableName).getBinding("items");
+
+				if (oBinding.hasPendingChanges()) {
+					MessageBox.error("Refresh nicht möglich");
+					return;
+				}
+				oBinding.refresh();
+				MessageToast.show("Refresh erfolgreich");
 			},
 			
 			onCreateOrder: function (oEvent) {
@@ -64,7 +76,7 @@ sap.ui.define(
 						MessageToast.show(error.responseText);
 					}
 				);
-				this.onUpdate();
+				this.onUpdate("tableOrders");
 			},
 			
 			onCreatePosition: function (oEvent) {
@@ -87,11 +99,11 @@ sap.ui.define(
 						MessageToast.show(error.responseText);
 					}
 				);
-				this.onUpdate();
+				this.onUpdate("tablePositions");
 			},
 			
 			getTableName : function() {
-					var idButton = event.target.id;
+				var idButton = event.target.id;
 				var idTable = "";
 				if (idButton.includes("User")) {
 					idTable = "tableCustomers";
