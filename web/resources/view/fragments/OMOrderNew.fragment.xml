@@ -2,9 +2,9 @@
 	<Panel headerText="Bestellerfassung" class="sapUiResponsiveMargin">
 		<content>
 			<Label text="BID" labelFor="iBID"/>
-			<Input id="iBID" type="Text" class="sapUiSmallMarginBottom" value="{c>/BID}"/>
+			<Input id="iBID" type="Text" class="sapUiSmallMarginBottom" value="{o>/BID}"/>
 			<Label text="Bestelldatum" labelFor="iBestelldatum"/>
-			<Input id="iBestelldatum" type="Text" class="sapUiSmallMarginBottom" value="{c>/Bestelldatum}"/>
+			<Input id="iBestelldatum" type="Text" class="sapUiSmallMarginBottom" value="{o>/Bestelldatum}"/>
 			<Button text="Anlegen" press="onCreateOrder"/>
 		</content>
 	</Panel>

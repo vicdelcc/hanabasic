@@ -2,11 +2,11 @@
 	<Panel headerText="Bestellpositionerfassung" class="sapUiResponsiveMargin">
 		<content>
 			<Label text="PID" labelFor="iPID"/>
-			<Input id="iPID" type="Text" class="sapUiSmallMarginBottom" value="{c>/PID}"/>
+			<Input id="iPID" type="Text" class="sapUiSmallMarginBottom" value="{p>/PID}"/>
 			<Label text="Menge" labelFor="iMenge"/>
-			<Input id="iMenge" type="Integer" class="sapUiSmallMarginBottom" value="{c>/Menge}"/>
+			<Input id="iMenge" type="Integer" class="sapUiSmallMarginBottom" value="{p>/Menge}"/>
 			<Label text="AID" labelFor="iAID"/>
-			<Input id="iAID" type="Text" class="sapUiSmallMarginBottom" value="{c>/AID}"/>
+			<Input id="iAID" type="Text" class="sapUiSmallMarginBottom" value="{p>/AID_AID}"/>
 			<Button text="Anlegen" press="onCreatePosition"/>
 		</content>
 	</Panel>

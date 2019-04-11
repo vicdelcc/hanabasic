@@ -19,7 +19,8 @@ sap.ui.define(
 				
 				var oPositionModel = new JSONModel({
 					"PID": "p",
-					"Menge": 1
+					"Menge": 1,
+					"AID_AID": "a1"
 				});
 				this.setModel(oPositionModel, "p");
 			},
@@ -27,6 +28,7 @@ sap.ui.define(
 			onCreateUser: function (oEvent) {
 				var oOdataModel = this.getModel("orderMan");
 				var oNewCustomer = this.getModel("c").getData();
+				console.log("oNewCustomer: " , oNewCustomer);
 				var oBinding = this.byId("tableCustomers").getBinding("items");
 				var oContext = oBinding.create(oNewCustomer);
 
@@ -44,7 +46,6 @@ sap.ui.define(
 			onCreateOrder: function (oEvent) {
 				var oOdataModel = this.getModel("orderMan");
 				var oNewOrder = this.getModel("o").getData();
-
 				var oSelected = this.byId("tableCustomers").getSelectedItem();
 				if (oSelected) {
 					var aCells = oSelected.getCells();
@@ -74,7 +75,7 @@ sap.ui.define(
 					var aCells = oSelected.getCells();
 					var iBID = aCells[0].getText();
 				}
-				oNewPosition.BID = iBID;
+				oNewPosition.BID_BID = iBID;
 				var oBinding = this.byId("tablePositions").getBinding("items");
 				var oContext = oBinding.create(oNewPosition);
 
@@ -93,14 +94,11 @@ sap.ui.define(
 					var idButton = event.target.id;
 				var idTable = "";
 				if (idButton.includes("User")) {
-					console.log("CUSTOMER");
 					idTable = "tableCustomers";
 				} else if (idButton.includes("Order")) {
 					idTable = "tableOrders";
-					console.log("ORDERS");
 				} else {
 					idTable = "tablePositions";
-					console.log("POSITIONS");
 				}
 				return idTable;
 			},
